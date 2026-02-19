@@ -68,60 +68,60 @@ using System.Threading.Channels;
 //}
 
 
-int j = 1;
+//int j = 1;
 
-while (j != 0)
-{
-}
+//while (j != 0)
+//{
+//}
 
-int[] arvud = new int[5];
-
-
-for (int i = 0; i < arvud.Length; i++)
-{
-    Console.WriteLine($"sisesta {i + 1}.arv:");
-
-    try
-    {
-        arvud[i] = int.Parse(Console.ReadLine());
-    }
-    catch (Exception e)
-    {
-        Console.WriteLine(e);
-    }
-}
+//int[] arvud = new int[5];
 
 
-foreach (int arv in arvud)
-{
-    Console.WriteLine($"Sisesta arv: {arv}");
-}
+//for (int i = 0; i < arvud.Length; i++)
+//{
+//    Console.WriteLine($"sisesta {i + 1}.arv:");
+
+//    try
+//    {
+//        arvud[i] = int.Parse(Console.ReadLine());
+//    }
+//    catch (Exception e)
+//    {
+//        Console.WriteLine(e);
+//    }
+//}
 
 
-Console.WriteLine("For abil: esimene -> viimane");
-for (int i = 0; i < arvud.Length; i++)
-{
-    Console.WriteLine($"sisestatud arv: {arvud[i]}");
-}
+//foreach (int arv in arvud)
+//{
+//    Console.WriteLine($"Sisesta arv: {arv}");
+//}
 
 
-Console.WriteLine("For abil: viimane -> esimene");
-for (int i = arvud.Length - 1; i >= 0; i--)
-{
-    Console.WriteLine($"sisestatud arv: {arvud[i]}");
-}
+//Console.WriteLine("For abil: esimene -> viimane");
+//for (int i = 0; i < arvud.Length; i++)
+//{
+//    Console.WriteLine($"sisestatud arv: {arvud[i]}");
+//}
 
 
-Console.WriteLine("Kuhu: ");
-int positsioon = int.Parse(Console.ReadLine());
-Console.WriteLine("Miliseks");
-int uus_arv = int.Parse(Console.ReadLine());
-arvud[positsioon - 1] = uus_arv;
-Console.WriteLine("Uuendatud massiiv");
-for (int i=0; i<arvud.Length;i++ ) ;
-{
-    Console.WriteLine($"sisestatud arvud: {arvud[i]}");
-}
+//Console.WriteLine("For abil: viimane -> esimene");
+//for (int i = arvud.Length - 1; i >= 0; i--)
+//{
+//    Console.WriteLine($"sisestatud arv: {arvud[i]}");
+//}
+
+
+//Console.WriteLine("Kuhu: ");
+//int positsioon = int.Parse(Console.ReadLine());
+//Console.WriteLine("Miliseks");
+//int uus_arv = int.Parse(Console.ReadLine());
+//arvud[positsioon - 1] = uus_arv;
+//Console.WriteLine("Uuendatud massiiv");
+//for (int i=0; i<arvud.Length;i++ ) ;
+//{
+//    Console.WriteLine($"sisestatud arvud: {arvud[i]}");
+//}
 
 
 

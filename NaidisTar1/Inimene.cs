@@ -1,24 +1,21 @@
-﻿using System;
+﻿using NaidisTar1;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace NaidisTar1
 {
-    public class isik
+    internal class Inimene
     {
         public string Nimi;
         public int Vanus;
-        public isik(string nimi, int vanus)
+
+
+        public Inimene(string nimi, int vanus)
         {
             Nimi = nimi;
             Vanus = vanus;
+        }
 
-        }
-        public isik() { }
-        public void Tervita()
-        {
-            Console.WriteLine("Tere");
-        }
     }
 }
-

@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Text;
 
-namespace NaidisTar1
-{
-    public class NaidisFunktsionid
-    {
+//namespace NaidisTar1
+//{
+//    public class NaidisFunktsionid
+//    {
+
+//    }
         //public static int[] Täida_massiiv(int[] arvud)
 //        {
 //            return arv1 + arv2;
