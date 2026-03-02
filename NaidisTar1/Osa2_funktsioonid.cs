@@ -7,7 +7,7 @@ using System.Threading.Channels;
 
 namespace NaidisTar1
 {
-    public class EsimineOsaFunktsionid
+    public class Osa2_funktsioonid
     {
         public static void Main(string[] args)
         {

@@ -17,5 +17,6 @@ namespace NaidisTar1
             Vanus = vanus;
         }
 
+
     }
 }
