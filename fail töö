@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Channels;
+
+namespace NaidisTar1
+{
+    internal class _4osaStartpage
+    {
+        static void Main(string[] args)
+        {
+            while(true)
+            {
+                Console.WriteLine("4.osa funktsionid");
+                string valik = Console.ReadLine();
+                string fail = "";
+                List<string> list = new List<string>();
+                    switch (valik)
+                {
+                    case "1": Osa4.FailiKirjutamine(); break;
+                    case "2": Osa4.FailiLugemine(); break;
+
+                    case "3":
+                        Console.Write("failinimi: ");
+                        string fail = Console.ReadLine();
+                        Osa4.Ridadelugemine(fail);
+                        break;
+
+                    default: Console.Write("sisesta kehtiv number: "); break;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.IO;
+
+namespace NaidisTar1
+{
+    public class Osa4
+    {
+        static void Main(string[] args)
+        {
+            FailiKirjutamine();
+            FailiLugemine();
+            Ridadelugemine("Kuud.txt");
+        }
+
+        public static void FailiKirjutamine()
+        {
+            try
+            {
+                string path = @"..\..\..\Kuud.txt";
+                StreamWriter text = new StreamWriter(path, true);
+                Console.WriteLine("Sisesta mingi tekst: ");
+                string lause = Console.ReadLine();
+                text.WriteLine(lause);
+                text.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Mingi viga failiga");
+            }
+        }
+
+        public static void FailiLugemine()
+        {
+            try
+            {
+                string path = @"..\..\..\Kuud.txt";
+                StreamReader text = new StreamReader(path);
+                string laused = text.ReadToEnd();
+                text.Close();
+                Console.WriteLine(laused);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Mingi viga failiga, ei saa faili lugeda");
+            }
+
+        }
+        public static List<string> Ridadelugemine(string file)
+        {
+            List<string> kuude_list = new List<string>();
+            try
+            {
+                string path = @"..\..\..\Kuud.txt";
+                foreach (string rida in File.ReadAllLines(path))
+                {
+                    kuude_list.Add(rida);
+                }
+
+
+                foreach (string rida in kuude_list)
+                {
+                    Console.WriteLine(rida);
+                }
+                foreach (string i in kuude_list) Console.WriteLine(i);
+                Console.WriteLine(kuude_list);
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Viga failiga!");
+            }
+        }
+    }
+}
