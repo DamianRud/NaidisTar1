@@ -1,0 +1,129 @@
+using System;
+using System.IO;
+
+namespace NaidisTar1
+{
+    public class Osa4
+    {
+        static List<string> kuude_list = new List<string>();
+        static void Main(string[] args)
+        {
+            FailiKirjutamine();
+            FailiLugemine();
+            Ridadelugemine("Kuud.txt");
+        }
+
+        public static void FailiKirjutamine()
+        {
+            try
+            {
+                string path = @"..\..\..\Kuud.txt";
+                StreamWriter text = new StreamWriter(path, true);
+                Console.WriteLine("Sisesta mingi tekst: ");
+                string lause = Console.ReadLine();
+                text.WriteLine(lause);
+                text.Close();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Mingi viga failiga");
+            }
+        }
+
+        public static void FailiLugemine()
+        {
+            try
+            {
+                string path = @"..\..\..\Kuud.txt";
+                StreamReader text = new StreamReader(path);
+                string laused = text.ReadToEnd();
+                text.Close();
+                Console.WriteLine(laused);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Mingi viga failiga, ei saa faili lugeda");
+            }
+
+        }
+        public static List<string> Ridadelugemine(string file)
+        {
+            List<string> kuude_list = new List<string>();
+            try
+            {
+                string path = @"..\..\..\Kuud.txt";
+                foreach (string rida in File.ReadAllLines(path))
+                {
+                    kuude_list.Add(rida);
+                }
+
+
+                foreach (string rida in kuude_list)
+                {
+                    Console.WriteLine(rida);
+                }
+                foreach (string i in kuude_list) Console.WriteLine(i);
+                Console.WriteLine(kuude_list);
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Viga failiga!");
+            }
+            return kuude_list;
+            {
+                {
+
+                }
+            }
+        }
+
+
+        public static void Listi_muutmine_kuvamine()
+        {
+            foreach (string k in kuude_list)
+            {
+                Console.WriteLine(k);
+            }
+
+            Console.WriteLine("sisesta kuu kustutamiseks");
+            string kuu = Console.ReadLine();
+            kuude_list.Remove($"{kuu}");
+
+            // Muuda esimest elementi
+            if (kuude_list.Count > 0)
+                kuude_list[0] = "Veeel kuu";
+
+            Console.WriteLine("---------------kustutasime kuu---------------");
+
+            foreach (string k in kuude_list)
+            {
+                Console.WriteLine(k);
+            }
+        }   
+                
+                    
+                             
+
+        public static void Otsing_nimekirjast()
+        {
+            kuude_list = Ridadelugemine("kuud.txt");
+            Console.WriteLine("Sisesta kuu nimi, mida otsida:");
+            string otsitav = Console.ReadLine();
+
+            if (kuude_list.Contains(otsitav))
+                Console.WriteLine("Kuu " + otsitav + " on olemas.");
+            else
+                Console.WriteLine("Sellist kuud pole.");
+        }
+
+        public static void Listi_salvestamine()
+        {
+            string path = @"...\kuud.txt";
+            File.WriteAllLines(path, kuude_list);
+            Console.WriteLine("Andmed on salvestatud.");
+        }
+
+         
+    }
+}
