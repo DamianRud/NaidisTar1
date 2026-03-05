@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Channels;
+
+namespace NaidisTar1
+{
+    internal class _4osaStartpage
+    {
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                Console.WriteLine("4.osa funktsionid");
+                string valik = Console.ReadLine();
+                string fail = "";
+                List<string> list = new List<string>();
+                switch (valik)
+                {
+                    case "1": Osa4.FailiKirjutamine(); break;
+                    case "2": Osa4.FailiLugemine(); break;
+
+                    case "3":
+                        Console.Write("failinimi: ");
+                        fail = Console.ReadLine();
+                        Osa4.Ridadelugemine(fail);
+                        break;
+
+                    default:
+                        Console.Write("sisesta kehtiv number: ");
+                        break;
+                }
+            }
+        }
+    }
+}
